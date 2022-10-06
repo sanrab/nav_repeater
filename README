@@ -1,0 +1,22 @@
+NMEA-SERVER per S/Y POLARIS
+Wi-fi router D-LINK DIR-655 settato solo per wi-fi, senza internet, con indirizzo IP 10.10.10.1, SSID polaris-net
+Raspberry ZeroW con RaspbianOS Lite, kplex, con indirizzo statico 10.10.10.100
+kplex.conf
+
+[serial]
+name=ublox
+filename=/dev/ttyACM0
+baud=57600
+direction=in
+
+[serial]
+name=daisyAIS
+filename=/dev/ttyUSB0
+baud=38400
+ofilter=+AI***:-all
+direction=out
+
+[tcp]
+address=localhost
+port=10110
+direction=out
